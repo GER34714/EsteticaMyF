@@ -1,1 +1,1521 @@
-.
+<!-- index.html (PARTE 1/2) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Estetica M&F | Turnos por WhatsApp</title>
+  <meta name="description" content="Depilacion laser, masajes, exfoliacion, limpieza de cutis y belleza de manos y pies en Pilar, Buenos Aires. Reserva tu turno por WhatsApp." />
+  <meta name="keywords" content="estetica, depilacion laser, limpieza facial, masajes, exfoliacion, manos y pies, Pilar, Buenos Aires" />
+  <meta name="author" content="CIBORG 347" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Estetica M&F | Turnos por WhatsApp" />
+  <meta property="og:description" content="Depilacion laser, masajes, exfoliacion, limpieza de cutis y belleza de manos y pies en Pilar. Reserva tu turno por WhatsApp." />
+  <meta property="og:image" content="https://iili.io/qKcbvWJ.jpg" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Estetica M&F | Turnos por WhatsApp" />
+  <meta name="twitter:description" content="Servicios de estetica en Pilar. Reserva tu turno por WhatsApp." />
+  <meta name="twitter:image" content="https://iili.io/qKcbvWJ.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#080808;
+      --panel:#111111;
+      --panel-2:#171717;
+      --text:#f4f4f4;
+      --muted:#b6b6b6;
+      --line:rgba(255,255,255,.10);
+      --soft:rgba(255,255,255,.05);
+      --brand:#ffffff;
+      --glow:rgba(255,255,255,.15);
+      --wa:#25D366;
+      --ig1:#f58529;
+      --ig2:#dd2a7b;
+      --ig3:#8134af;
+      --ig4:#515bd4;
+      --radius:22px;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --max:1200px;
+      --top-offset:80px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    html, body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+      background:
+        radial-gradient(900px 500px at 10% 8%, rgba(255,255,255,.08), transparent 60%),
+        radial-gradient(700px 420px at 90% 12%, rgba(255,255,255,.07), transparent 60%),
+        radial-gradient(800px 500px at 50% 100%, rgba(255,255,255,.05), transparent 65%),
+        linear-gradient(180deg, #090909 0%, #0b0b0b 50%, #070707 100%);
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-1;
+      opacity:.06;
+      background-image:
+        linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 28px));
+      margin-inline:auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(12px);
+      background:rgba(8,8,8,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      min-height:68px;
+    }
+
+    .brand-mini{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-mini img{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      background:#fff;
+      flex-shrink:0;
+    }
+
+    .brand-mini-text{
+      min-width:0;
+    }
+
+    .brand-mini-text strong{
+      display:block;
+      font-size:.95rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .brand-mini-text span{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:nowrap;
+    }
+
+    .icon-btn, .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      transition:.2s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+
+    .icon-btn{
+      width:42px;
+      height:42px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .icon-btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.06);
+    }
+
+    .cta-btn{
+      padding:10px 14px;
+      font-size:.88rem;
+      font-weight:700;
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.18);
+    }
+
+    .cta-btn.whatsapp{
+      background:linear-gradient(180deg, rgba(37,211,102,.24), rgba(37,211,102,.12));
+      border-color:rgba(37,211,102,.35);
+    }
+
+    .hero{
+      padding:22px 0 14px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+    }
+
+    .card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
+        linear-gradient(90deg, rgba(255,255,255,.03), rgba(255,255,255,.00) 45%);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      pointer-events:none;
+      border-radius:inherit;
+      background:linear-gradient(120deg, rgba(255,255,255,.10), transparent 35%, transparent 65%, rgba(255,255,255,.06));
+      opacity:.35;
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding:1px;
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+    }
+
+    .hero-main{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:420px;
+      background:
+        radial-gradient(500px 250px at 100% 0%, rgba(255,255,255,.07), transparent 60%),
+        radial-gradient(450px 260px at 0% 100%, rgba(255,255,255,.05), transparent 60%);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.8rem;
+      color:var(--muted);
+      margin-bottom:14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:14px;
+      min-width:0;
+    }
+
+    .hero-brand img{
+      width:74px;
+      height:74px;
+      border-radius:20px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:0 8px 24px rgba(0,0,0,.28);
+      flex-shrink:0;
+    }
+
+    .hero-brand-text{
+      min-width:0;
+    }
+
+    .hero-brand-text .small{
+      display:block;
+      color:var(--muted);
+      font-size:.8rem;
+      margin-bottom:4px;
+    }
+
+    .hero h1{
+      margin:0 0 10px;
+      font-size:clamp(1.55rem, 3.8vw, 2.7rem);
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+
+    .hero h1 .script{
+      display:block;
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      letter-spacing:.02em;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:.98rem;
+      max-width:58ch;
+    }
+
+    .hero-ctas{
+      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:14px;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      font-weight:700;
+      transition:.2s ease;
+      min-height:46px;
+    }
+
+    .btn:hover{ transform:translateY(-1px); }
+
+    .btn-primary{
+      background:linear-gradient(180deg, rgba(37,211,102,.22), rgba(37,211,102,.10));
+      border-color:rgba(37,211,102,.35);
+      box-shadow:0 8px 20px rgba(37,211,102,.12);
+    }
+
+    .btn-secondary{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    }
+
+    .hero-meta{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .meta-item{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      padding:12px;
+      min-height:82px;
+    }
+
+    .meta-item span{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      margin-bottom:6px;
+    }
+
+    .meta-item strong{
+      display:block;
+      font-size:.95rem;
+      line-height:1.25;
+    }
+
+    .hero-side{
+      padding:16px;
+      display:grid;
+      grid-template-rows:auto auto 1fr;
+      gap:12px;
+      min-height:420px;
+    }
+
+    .hero-side .logo-panel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:170px;
+    }
+
+    .hero-side .logo-panel img{
+      width:min(100%, 260px);
+      aspect-ratio:1/1;
+      object-fit:contain;
+      border-radius:18px;
+      background:#fff;
+      padding:10px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 24px rgba(0,0,0,.25);
+    }
+
+    .quick-info{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .quick-box{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .quick-box .label{
+      color:var(--muted);
+      font-size:.78rem;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    .quick-box .value{
+      font-weight:700;
+      line-height:1.35;
+    }
+
+    .quick-box .value small{
+      display:block;
+      color:var(--muted);
+      font-weight:500;
+      font-size:.82rem;
+      margin-top:4px;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-content:flex-start;
+    }
+
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:#ededed;
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:.82rem;
+      line-height:1;
+    }
+
+    section{
+      padding:10px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(1.15rem, 2.6vw, 1.9rem);
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:.9rem;
+      max-width:56ch;
+      line-height:1.45;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(5, minmax(0,1fr));
+      gap:10px;
+    }
+
+    .service-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding:14px;
+      min-height:140px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:10px;
+      transition:.2s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(255,255,255,.16);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    }
+
+    .service-icon{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-size:1rem;
+    }
+
+    .service-card h3{
+      margin:0;
+      font-size:.96rem;
+      line-height:1.2;
+      letter-spacing:-.01em;
+    }
+
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.45;
+    }
+
+    .gallery-wrap{
+      padding:8px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:8px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#0f0f0f;
+      min-height:120px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease, filter .45s ease;
+      filter:saturate(.95) contrast(1.02);
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+      filter:saturate(1.03) contrast(1.04);
+    }
+
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,.28));
+      opacity:.8;
+    }
+
+    .gallery-item:nth-child(1){ grid-column:span 4; min-height:220px; }
+    .gallery-item:nth-child(2){ grid-column:span 4; min-height:220px; }
+    .gallery-item:nth-child(3){ grid-column:span 4; min-height:220px; }
+    .gallery-item:nth-child(4){ grid-column:span 6; min-height:240px; }
+    .gallery-item:nth-child(5){ grid-column:span 6; min-height:240px; }
+    .gallery-item:nth-child(6){ grid-column:span 4; min-height:200px; }
+    .gallery-item:nth-child(7){ grid-column:span 4; min-height:200px; }
+    .gallery-item:nth-child(8){ grid-column:span 4; min-height:200px; }
+
+    .split-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:12px;
+      align-items:start;
+    }
+
+    .info-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding:16px;
+    }
+
+    .info-card h3{
+      margin:0 0 10px;
+      font-size:1rem;
+      letter-spacing:-.01em;
+    }
+
+    .info-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:.9rem;
+    }
+
+    .list-clean{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .list-clean li{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:rgba(255,255,255,.02);
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.7);
+      margin-top:7px;
+      flex-shrink:0;
+      box-shadow:0 0 0 6px rgba(255,255,255,.05);
+    }
+
+    .line-title{
+      font-weight:700;
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .line-sub{
+      color:var(--muted);
+      font-size:.88rem;
+      line-height:1.4;
+    }
+
+    .schedule-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.02), rgba(255,255,255,.055) 52%, rgba(255,255,255,.02)),
+        rgba(255,255,255,.015);
+      padding:16px;
+    }
+
+    .schedule-grid{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .schedule-row{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      align-items:center;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .schedule-row strong{
+      font-size:.92rem;
+    }
+
+    .schedule-row span{
+      color:var(--muted);
+      font-weight:600;
+      font-size:.88rem;
+      text-align:right;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .contact-card{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding:16px;
+      min-height:100%;
+    }
+
+    .contact-card h3{
+      margin:0 0 12px;
+      font-size:1rem;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:10px;
+    }
+
+    .contact-item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background:rgba(255,255,255,.02);
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+
+    .contact-item .icon{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      flex-shrink:0;
+    }
+
+    .contact-item .txt{
+      min-width:0;
+    }
+
+    .contact-item .txt .k{
+      color:var(--muted);
+      font-size:.78rem;
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .contact-item .txt .v{
+      font-weight:700;
+      line-height:1.35;
+      word-break:break-word;
+    }
+
+    .contact-cta{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }<!-- index.html (PARTE 2/2) -->
+    .map-badge{
+      margin-top:10px;
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:14px;
+      padding:12px;
+      color:var(--muted);
+      font-size:.86rem;
+      line-height:1.45;
+      background:rgba(255,255,255,.01);
+    }
+
+    .final-cta{
+      margin-top:8px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:18px;
+      background:
+        radial-gradient(500px 160px at 5% 0%, rgba(255,255,255,.06), transparent 60%),
+        radial-gradient(500px 160px at 95% 100%, rgba(255,255,255,.06), transparent 60%),
+        rgba(255,255,255,.02);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .final-cta h3{
+      margin:0;
+      font-size:1.05rem;
+      letter-spacing:-.01em;
+    }
+
+    .final-cta p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:.9rem;
+      line-height:1.45;
+    }
+
+    footer{
+      margin-top:14px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.01);
+    }
+
+    .footer-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      padding:12px 0 calc(12px + 72px);
+    }
+
+    .footer-left{
+      color:var(--muted);
+      font-size:.86rem;
+      line-height:1.45;
+    }
+
+    .footer-right a{
+      color:#eaeaea;
+      font-weight:700;
+      border-bottom:1px dashed rgba(255,255,255,.25);
+    }
+
+    .floating-wa{
+      position:fixed;
+      right:14px;
+      bottom:14px;
+      z-index:60;
+      width:58px;
+      height:58px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:var(--wa);
+      color:#fff;
+      border:2px solid rgba(255,255,255,.8);
+      box-shadow:
+        0 10px 24px rgba(0,0,0,.35),
+        0 0 0 10px rgba(37,211,102,.10);
+      transition:.2s ease;
+    }
+
+    .floating-wa:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:
+        0 14px 26px rgba(0,0,0,.38),
+        0 0 0 12px rgba(37,211,102,.14);
+    }
+
+    .floating-wa svg{
+      width:28px;
+      height:28px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .45s ease, transform .45s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width: 1100px){
+      .services-grid{
+        grid-template-columns:repeat(3, minmax(0,1fr));
+      }
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-main,
+      .hero-side{
+        min-height:auto;
+      }
+      .split-grid{
+        grid-template-columns:1fr;
+      }
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(var(--max), calc(100% - 18px));
+      }
+
+      .topbar-inner{
+        min-height:64px;
+      }
+
+      .brand-mini-text span{
+        display:none;
+      }
+
+      .top-actions .cta-btn span{
+        display:none;
+      }
+
+      .cta-btn{
+        padding:10px 12px;
+      }
+
+      .hero{
+        padding-top:14px;
+      }
+
+      .hero-main{
+        padding:16px;
+        border-radius:20px;
+      }
+
+      .hero-side{
+        padding:12px;
+      }
+
+      .hero-brand{
+        align-items:center;
+      }
+
+      .hero-brand img{
+        width:62px;
+        height:62px;
+        border-radius:16px;
+      }
+
+      .hero p{
+        font-size:.92rem;
+      }
+
+      .hero-ctas{
+        flex-direction:column;
+      }
+
+      .hero-ctas .btn{
+        width:100%;
+      }
+
+      .hero-meta{
+        grid-template-columns:1fr;
+      }
+
+      .services-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .service-card{
+        min-height:126px;
+        padding:12px;
+      }
+
+      .gallery-wrap{
+        padding:6px;
+        border-radius:18px;
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:6px;
+      }
+
+      .gallery-item{
+        grid-column:span 1 !important;
+        min-height:150px !important;
+        border-radius:12px;
+      }
+
+      .section-head{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .section-head p{
+        font-size:.88rem;
+      }
+
+      .schedule-row{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .schedule-row span{
+        text-align:left;
+      }
+
+      .final-cta{
+        border-radius:18px;
+        padding:14px;
+      }
+
+      .footer-inner{
+        padding-bottom:calc(12px + 78px);
+      }
+
+      .floating-wa{
+        width:56px;
+        height:56px;
+        right:12px;
+        bottom:12px;
+      }
+    }
+
+    @media (max-width: 420px){
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .brand-mini img{
+        width:38px;
+        height:38px;
+      }
+
+      .icon-btn{
+        width:40px;
+        height:40px;
+      }
+
+      .btn{
+        border-radius:12px;
+        padding:11px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-mini">
+        <img src="https://iili.io/qKcbvWJ.jpg" alt="Logo Estetica M&F" loading="eager" />
+        <div class="brand-mini-text">
+          <strong>Estetica M&F</strong>
+          <span>Pilar, Buenos Aires</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <a class="icon-btn" href="https://instagram.com/esteticamasculinayfemeninaa" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Estetica M&F">
+          <!-- Instagram oficial -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="igGradTop" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f58529"/>
+                <stop offset="35%" stop-color="#dd2a7b"/>
+                <stop offset="70%" stop-color="#8134af"/>
+                <stop offset="100%" stop-color="#515bd4"/>
+              </linearGradient>
+            </defs>
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#igGradTop)" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="url(#igGradTop)" stroke-width="2"/>
+            <circle cx="17.3" cy="6.7" r="1.15" fill="url(#igGradTop)"/>
+          </svg>
+        </a>
+
+        <a class="cta-btn whatsapp" href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20consultar%20por%20turnos." target="_blank" rel="noopener noreferrer" aria-label="Reservar por WhatsApp">
+          <!-- WhatsApp oficial -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M19.11 17.2c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.46.07-.7.35-.23.28-.9.88-.9 2.15s.92 2.5 1.04 2.67c.12.16 1.8 2.75 4.37 3.86.61.26 1.09.41 1.46.53.61.19 1.17.16 1.6.1.49-.07 1.64-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+            <path d="M16.02 3C8.84 3 3 8.72 3 15.78c0 2.26.61 4.48 1.77 6.42L3 29l7.01-1.83a13.12 13.12 0 0 0 6.01 1.45h.01c7.18 0 13.02-5.72 13.02-12.78C29.04 8.72 23.2 3 16.02 3zm0 23.5h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.16 1.09 1.11-4.02-.26-.41a10.62 10.62 0 0 1-1.64-5.62c0-5.9 4.91-10.7 10.93-10.7 6.03 0 10.93 4.8 10.93 10.7 0 5.9-4.91 10.72-10.94 10.72z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="card hero-main reveal">
+          <div>
+            <div class="badge">Atencion estetica en Pilar, Bs As</div>
+
+            <div class="hero-brand">
+              <img src="https://iili.io/qKcbvWJ.jpg" alt="Logo circular Estetica M&F" />
+              <div class="hero-brand-text">
+                <span class="small">Estetica masculina y femenina</span>
+                <h1>
+                  ESTETICA
+                  <span class="script">M&F</span>
+                </h1>
+              </div>
+            </div>
+
+            <p>
+              Depilacion laser, masajes, exfoliacion, limpieza de cutis y belleza de manos y pies.
+              Reserva tu turno por WhatsApp y consulta disponibilidad.
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true">
+                  <path d="M19.11 17.2c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.46.07-.7.35-.23.28-.9.88-.9 2.15s.92 2.5 1.04 2.67c.12.16 1.8 2.75 4.37 3.86.61.26 1.09.41 1.46.53.61.19 1.17.16 1.6.1.49-.07 1.64-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+                  <path d="M16.02 3C8.84 3 3 8.72 3 15.78c0 2.26.61 4.48 1.77 6.42L3 29l7.01-1.83a13.12 13.12 0 0 0 6.01 1.45h.01c7.18 0 13.02-5.72 13.02-12.78C29.04 8.72 23.2 3 16.02 3zm0 23.5h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.16 1.09 1.11-4.02-.26-.41a10.62 10.62 0 0 1-1.64-5.62c0-5.9 4.91-10.7 10.93-10.7 6.03 0 10.93 4.8 10.93 10.7 0 5.9-4.91 10.72-10.94 10.72z"/>
+                </svg>
+                Reservar turno por WhatsApp
+              </a>
+
+              <a class="btn btn-secondary" href="https://instagram.com/esteticamasculinayfemeninaa" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="igGradBtn" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#f58529"/>
+                      <stop offset="35%" stop-color="#dd2a7b"/>
+                      <stop offset="70%" stop-color="#8134af"/>
+                      <stop offset="100%" stop-color="#515bd4"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#igGradBtn)" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="4" stroke="url(#igGradBtn)" stroke-width="2"/>
+                  <circle cx="17.3" cy="6.7" r="1.15" fill="url(#igGradBtn)"/>
+                </svg>
+                Ver Instagram
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <div class="meta-item">
+                <span>Ubicacion</span>
+                <strong>Pilar, Buenos Aires</strong>
+              </div>
+              <div class="meta-item">
+                <span>Horarios</span>
+                <strong>Lun-Sab 09:00 a 20:00</strong>
+              </div>
+              <div class="meta-item">
+                <span>Domingos</span>
+                <strong>09:00 a 14:00</strong>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="card hero-side reveal">
+          <div class="logo-panel">
+            <img src="https://iili.io/qKcbvWJ.jpg" alt="Logo principal Estetica M&F" />
+          </div>
+
+          <div class="quick-info">
+            <div class="quick-box">
+              <span class="label">Contacto principal</span>
+              <div class="value">
+                +54 9 11 2654-6426
+                <small>Turnos y consultas por WhatsApp</small>
+              </div>
+            </div>
+
+            <div class="quick-box">
+              <span class="label">Instagram</span>
+              <div class="value">
+                @esteticamasculinayfemeninaa
+                <small>Usuario corto: @esteticamyf</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-box" style="height:100%;">
+            <span class="label">Servicios</span>
+            <div class="pill-row">
+              <span class="pill">Depilacion laser</span>
+              <span class="pill">Masajes</span>
+              <span class="pill">Exfoliacion</span>
+              <span class="pill">Limpieza de cutis</span>
+              <span class="pill">Manos y pies</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Servicios destacados</h2>
+            <p>Una propuesta simple y profesional para mostrar lo mas importante y facilitar la reserva de turnos.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">✨</div>
+            <div>
+              <h3>Depilacion laser</h3>
+              <p>Tratamientos orientados al cuidado y la estetica con atencion personalizada.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">💆</div>
+            <div>
+              <h3>Masajes</h3>
+              <p>Sesiones para bienestar, relajacion y cuidado corporal en un espacio comodo.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🫧</div>
+            <div>
+              <h3>Exfoliacion</h3>
+              <p>Rutinas y sesiones enfocadas en mejorar el aspecto y la textura de la piel.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">🧴</div>
+            <div>
+              <h3>Limpieza de cutis</h3>
+              <p>Atencion estetica facial para limpieza, cuidado y mantenimiento de la piel.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">💅</div>
+            <div>
+              <h3>Manos y pies</h3>
+              <p>Servicios de belleza para mantener una imagen cuidada y prolija.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Galeria</h2>
+            <p>Imagenes de trabajos, espacios y contenido del perfil para mostrar confianza y estilo visual.</p>
+          </div>
+        </div>
+
+        <div class="gallery-wrap reveal">
+          <div class="gallery-grid">
+            <a class="gallery-item" href="https://iili.io/qKcbUfR.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 1">
+              <img src="https://iili.io/qKcbUfR.jpg" alt="Galeria Estetica M&F 1" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbrUN.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 2">
+              <img src="https://iili.io/qKcbrUN.jpg" alt="Galeria Estetica M&F 2" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcb6JI.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 3">
+              <img src="https://iili.io/qKcb6JI.jpg" alt="Galeria Estetica M&F 3" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbPRt.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 4">
+              <img src="https://iili.io/qKcbPRt.jpg" alt="Galeria Estetica M&F 4" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbiOX.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 5">
+              <img src="https://iili.io/qKcbiOX.jpg" alt="Galeria Estetica M&F 5" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbsbn.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 6">
+              <img src="https://iili.io/qKcbsbn.jpg" alt="Galeria Estetica M&F 6" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbQxs.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 7">
+              <img src="https://iili.io/qKcbQxs.jpg" alt="Galeria Estetica M&F 7" loading="lazy" />
+            </a>
+            <a class="gallery-item" href="https://iili.io/qKcbZWG.jpg" target="_blank" rel="noopener noreferrer" aria-label="Imagen de galeria 8">
+              <img src="https://iili.io/qKcbZWG.jpg" alt="Galeria Estetica M&F 8" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info">
+      <div class="container split-grid">
+        <div class="info-card reveal">
+          <h3>Por que elegir Estetica M&F</h3>
+          <ul class="list-clean">
+            <li>
+              <span class="dot"></span>
+              <div>
+                <span class="line-title">Atencion personalizada</span>
+                <span class="line-sub">Consultas por WhatsApp para coordinar turnos segun disponibilidad y servicio.</span>
+              </div>
+            </li>
+            <li>
+              <span class="dot"></span>
+              <div>
+                <span class="line-title">Servicios variados</span>
+                <span class="line-sub">Propuesta de estetica masculina y femenina con opciones de cuidado facial y corporal.</span>
+              </div>
+            </li>
+            <li>
+              <span class="dot"></span>
+              <div>
+                <span class="line-title">Contacto directo</span>
+                <span class="line-sub">Instagram activo y WhatsApp como canal principal para responder rapido.</span>
+              </div>
+            </li>
+            <li>
+              <span class="dot"></span>
+              <div>
+                <span class="line-title">Ubicacion y horarios claros</span>
+                <span class="line-sub">Informacion visible para facilitar consultas, reservas y asistencia.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="schedule-card reveal">
+          <h3 style="margin:0;">Horarios de atencion</h3>
+          <p style="margin:8px 0 0; color:var(--muted); font-size:.9rem; line-height:1.45;">
+            Reserva tu cita por WhatsApp. Quedan pocos lugares segun disponibilidad.
+          </p>
+
+          <div class="schedule-grid">
+            <div class="schedule-row">
+              <strong>Lunes a Sabados</strong>
+              <span>09:00 a 20:00</span>
+            </div>
+            <div class="schedule-row">
+              <strong>Domingos</strong>
+              <span>09:00 a 14:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Contacto y ubicacion</h2>
+            <p>Canales oficiales para consultas, reservas y seguimiento de novedades.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Datos de contacto</h3>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M19.11 17.2c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.46.07-.7.35-.23.28-.9.88-.9 2.15s.92 2.5 1.04 2.67c.12.16 1.8 2.75 4.37 3.86.61.26 1.09.41 1.46.53.61.19 1.17.16 1.6.1.49-.07 1.64-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+                    <path d="M16.02 3C8.84 3 3 8.72 3 15.78c0 2.26.61 4.48 1.77 6.42L3 29l7.01-1.83a13.12 13.12 0 0 0 6.01 1.45h.01c7.18 0 13.02-5.72 13.02-12.78C29.04 8.72 23.2 3 16.02 3zm0 23.5h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.16 1.09 1.11-4.02-.26-.41a10.62 10.62 0 0 1-1.64-5.62c0-5.9 4.91-10.7 10.93-10.7 6.03 0 10.93 4.8 10.93 10.7 0 5.9-4.91 10.72-10.94 10.72z"/>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">WhatsApp principal</span>
+                  <div class="v">
+                    <a href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20consultar%20por%20turnos." target="_blank" rel="noopener noreferrer">+54 9 11 2654-6426</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M19.11 17.2c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.46.07-.7.35-.23.28-.9.88-.9 2.15s.92 2.5 1.04 2.67c.12.16 1.8 2.75 4.37 3.86.61.26 1.09.41 1.46.53.61.19 1.17.16 1.6.1.49-.07 1.64-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+                    <path d="M16.02 3C8.84 3 3 8.72 3 15.78c0 2.26.61 4.48 1.77 6.42L3 29l7.01-1.83a13.12 13.12 0 0 0 6.01 1.45h.01c7.18 0 13.02-5.72 13.02-12.78C29.04 8.72 23.2 3 16.02 3zm0 23.5h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.16 1.09 1.11-4.02-.26-.41a10.62 10.62 0 0 1-1.64-5.62c0-5.9 4.91-10.7 10.93-10.7 6.03 0 10.93 4.8 10.93 10.7 0 5.9-4.91 10.72-10.94 10.72z"/>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">WhatsApp secundario</span>
+                  <div class="v">
+                    <a href="https://wa.me/5491154101336?text=Hola%20Estetica%20M%26F%2C%20quiero%20consultar%20por%20turnos." target="_blank" rel="noopener noreferrer">+54 9 11 5410-1336</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="igGradContact" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f58529"/>
+                        <stop offset="35%" stop-color="#dd2a7b"/>
+                        <stop offset="70%" stop-color="#8134af"/>
+                        <stop offset="100%" stop-color="#515bd4"/>
+                      </linearGradient>
+                    </defs>
+                    <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#igGradContact)" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" stroke="url(#igGradContact)" stroke-width="2"/>
+                    <circle cx="17.3" cy="6.7" r="1.15" fill="url(#igGradContact)"/>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">Instagram</span>
+                  <div class="v">
+                    <a href="https://instagram.com/esteticamasculinayfemeninaa" target="_blank" rel="noopener noreferrer">@esteticamasculinayfemeninaa</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M4 4h16v16H4z" opacity=".15"></path>
+                    <path d="M4 6l8 6 8-6"></path>
+                    <path d="M4 18V6"></path>
+                    <path d="M20 18V6"></path>
+                    <path d="M4 18h16"></path>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">Correo</span>
+                  <div class="v">
+                    <a href="mailto:melumelrestelli@gmail.com">melumelrestelli@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-cta">
+              <a class="btn btn-primary" href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">
+                Reservar por WhatsApp
+              </a>
+              <a class="btn btn-secondary" href="https://instagram.com/esteticamasculinayfemeninaa" target="_blank" rel="noopener noreferrer">
+                Abrir Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card reveal">
+            <h3>Ubicacion</h3>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path>
+                    <circle cx="12" cy="10" r="2.5"></circle>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">Direccion</span>
+                  <div class="v">Roberto Camaño Complejo 46</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M3 12h18"></path>
+                    <path d="M12 3v18"></path>
+                    <circle cx="12" cy="12" r="9"></circle>
+                  </svg>
+                </div>
+                <div class="txt">
+                  <span class="k">Zona</span>
+                  <div class="v">Pilar, Buenos Aires, Argentina</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-badge">
+              Podes sumar despues un boton a Google Maps o link directo con la ubicacion exacta si te lo pasan. Por ahora queda listo con direccion visible para consulta.
+            </div>
+          </div>
+        </div>
+
+        <div class="final-cta reveal">
+          <div>
+            <h3>Reserva tu cita hoy</h3>
+            <p>Escribi por WhatsApp para consultar disponibilidad y coordinar tu turno.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">
+            Ir a WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        Estetica M&F · Pilar, Buenos Aires · Turnos por WhatsApp e Instagram
+      </div>
+      <div class="footer-right">
+        <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener noreferrer">Creado y diseñado por Ciborg 347</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante WhatsApp oficial -->
+  <a
+    class="floating-wa"
+    href="https://wa.me/5491126546426?text=Hola%20Estetica%20M%26F%2C%20quiero%20consultar%20por%20turnos."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp Estetica M&F"
+    title="WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.2c-.28-.14-1.64-.81-1.9-.9-.25-.09-.44-.14-.62.14-.18.28-.72.9-.88 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.37-.82-.73-1.38-1.62-1.54-1.9-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.49-.85-2.04-.22-.53-.44-.46-.62-.47h-.53c-.18 0-.46.07-.7.35-.23.28-.9.88-.9 2.15s.92 2.5 1.04 2.67c.12.16 1.8 2.75 4.37 3.86.61.26 1.09.41 1.46.53.61.19 1.17.16 1.6.1.49-.07 1.64-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+      <path d="M16.02 3C8.84 3 3 8.72 3 15.78c0 2.26.61 4.48 1.77 6.42L3 29l7.01-1.83a13.12 13.12 0 0 0 6.01 1.45h.01c7.18 0 13.02-5.72 13.02-12.78C29.04 8.72 23.2 3 16.02 3zm0 23.5h-.01a10.9 10.9 0 0 1-5.56-1.52l-.4-.24-4.16 1.09 1.11-4.02-.26-.41a10.62 10.62 0 0 1-1.64-5.62c0-5.9 4.91-10.7 10.93-10.7 6.03 0 10.93 4.8 10.93 10.7 0 5.9-4.91 10.72-10.94 10.72z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Animaciones suaves de entrada
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
